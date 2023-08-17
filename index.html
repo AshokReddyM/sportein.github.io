@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Page</title>
+</head>
+<body>
+    <!-- ... Your payment page content ... -->
+    
+    <script>
+        // Simulate a successful payment
+        // Call the paymentSuccessful method when the payment is successful
+        function simulatePaymentSuccess() {
+            PaymentStatusInterface.paymentSuccessful();
+        }
+        
+        // Simulate a failed payment
+        // Call the paymentFailed method when the payment fails
+        function simulatePaymentFailure() {
+            PaymentStatusInterface.paymentFailed();
+        }
+        
+        // Simulate the payment process
+        function simulatePaymentProcess() {
+            // ... Perform payment process ...
+            
+            // Simulate payment success or failure
+            if (paymentSuccess) {
+                simulatePaymentSuccess();
+            } else {
+                simulatePaymentFailure();
+            }
+        }
+        
+        // Call the payment process simulation automatically when the page loads
+        window.onload = simulatePaymentProcess;
+    </script>
+</body>
+</html>
