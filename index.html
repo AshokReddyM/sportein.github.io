@@ -22,33 +22,33 @@
     </style>
 </head>
 <body>
-    <!-- ... Your payment page content ... -->
-    
     <!-- Loader element -->
     <div class="loader" id="loader"></div>
     
+    <!-- ... Your payment page content ... -->
+    
     <script>
-        // ... Your existing JavaScript code ...
+        // Notify Android app about payment success
+        function notifyPaymentSuccess() {
+            PaymentStatusInterface.paymentSuccessful();
+        }
 
-        function simulatePaymentProcess() {
+        // Simulate a successful payment
+        // Call the paymentSuccessful method when the payment is successful
+        function simulatePaymentSuccess() {
             // Show the loader
             document.getElementById("loader").style.display = "block";
 
-            // ... Perform payment process ...
-
-            // Simulate payment success or failure
-            if (paymentSuccess) {
-                simulatePaymentSuccess();
-            } else {
-                simulatePaymentFailure();
-            }
-
-            // Hide the loader after the simulation
-            document.getElementById("loader").style.display = "none";
+            // Simulate a successful payment
+            setTimeout(function() {
+                notifyPaymentSuccess();
+                // Hide the loader
+                document.getElementById("loader").style.display = "none";
+            }, 2000); // Simulate a delay of 2 seconds
         }
 
-        // Call the payment process simulation automatically when the page loads
-        window.onload = simulatePaymentProcess;
+        // Automatically call simulatePaymentSuccess when the page loads
+        simulatePaymentSuccess();
     </script>
 </body>
 </html>
